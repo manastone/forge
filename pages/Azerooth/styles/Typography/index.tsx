@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { Fragment, useState } from "react";
 import PreviewCode from "../../../components/PreviewCode";
 
-const AzeroothTypographyModule: NextPage = () => {
+const AzeroothTypographyStyles: NextPage = () => {
   const [text, setText] = useState(["text-caption", "text-caption"]);
   return (
     <Fragment>
@@ -230,4 +230,4 @@ const AzeroothTypographyModule: NextPage = () => {
   );
 };
 
-export default AzeroothTypographyModule;
+export default AzeroothTypographyStyles;

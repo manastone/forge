@@ -5,6 +5,8 @@ import PreviewCode from "../../../components/PreviewCode";
 // sources
 import { structure } from "./data/structure";
 import { darklight } from "./data/darklight";
+import { colordefault } from "./data/colordefault";
+import { customcolor } from "./data/customcolor";
 
 const AzeroothFeatureTheme: NextPage = () => {
   return (
@@ -23,7 +25,8 @@ const AzeroothFeatureTheme: NextPage = () => {
       cela nous recommandons de créer dans votre dossier <code>src</code> (sauf
       si vous utilisez next.js créer le à la racine du projet), un nouveau
       dossier nommé <code>plugins</code>. Créer un fichier nommé{" "}
-      <b>azerooth.ts</b>.
+      <b>azerooth.ts</b>. Ensuite envoyer le en props <code>theme</code> sur le
+      module <b>App</b> et le tour est joué.
       <PreviewCode code={structure} lang={"ts"} />
       <h3>Clair et sombre</h3>
       Azerooth prend en charge les variantes <b>light</b> et <b>dark</b> de la
@@ -45,6 +48,50 @@ const AzeroothFeatureTheme: NextPage = () => {
       <code>setMixedMode()</code> qui fonctionne de la même manière que{" "}
       <code>setDarkMode()</code>
       <h3>Personnalisation</h3>
+      Par défaut, Azerooth a un thème standard appliqué à tous les composants.
+      <PreviewCode code={colordefault} lang={"js"} />
+      Cela peut être facilement changé. Passez simplement une propriété de thème
+      au constructeur Azerooth. Vous pouvez choisir de modifier toutes ou
+      seulement certaines des propriétés du thème, les autres héritant de la
+      valeur par défaut. Vous pôuvez aussi ajouter des clés afin de définire vos
+      propres modèles.
+      <PreviewCode code={customcolor} lang={"ts"} />
+      <h3>Utilisation des clés et autres couleurs</h3>
+      L&#34;ensemble des modules Azerooth hérite des couleurs du theme. vous
+      pouvez ensuite suivant les props dispible sur charque module utiliser les
+      clés du couleurs. lorsque vous avez une props <code>color</code> ou{" "}
+      <code>background</code> vous pouvez y intégrer les couleurs suivant
+      différente façon.
+      <ul>
+        <li>
+          <code>color=&#34;primary&#34; color theming azerooth</code>
+        </li>
+        <li>
+          <code>color=&#34;primary 0.3&#34;</code> pour avoir un effet de
+          transparence
+        </li>
+        <li>
+          <code>color=&#34;red&#34;</code> couleur html standard
+        </li>
+        <li>
+          <code>color=&#34;red 0.7&#34;</code> couleur html standard avec
+          transparence
+        </li>
+        <li>
+          <code>color=&#34;#fffff&#34;</code> couleur hexa standard
+        </li>
+        <li>
+          <code>color=&#34;#fffff 0.8&#34;</code> couleur hexa standard avec
+          transparence
+        </li>
+        <li>
+          <code>color=&#34;red V50&#34;</code> couleur Material Design
+        </li>
+        <li>
+          <code>color=&#34;red V50 0.8&#34;</code> couleur Material Design avec
+          transparence
+        </li>
+      </ul>
     </Fragment>
   );
 };

@@ -8,8 +8,13 @@ import { Fragment } from "react";
 
 import HomeAzerooth from "./Azerooth/Home";
 import AzeroothAppModule from "./Azerooth/components/Application";
-import AzeroothTypographyModule from "./Azerooth/styles/Typography";
+import AzeroothTypographyStyles from "./Azerooth/styles/Typography";
+import AzeroothColorsStyles from "./Azerooth/styles/Colors";
+import AzeroothBorderRadiusStyles from "./Azerooth/styles/BorderRadius";
+import AzeroothDisplayStyles from "./Azerooth/styles/Display";
 import AzeroothFeatureTheme from "./Azerooth/features/Theme";
+import AzeroothFeatureBreakpoints from "./Azerooth/features/Breakpoints";
+import AzeroothOverflowStyles from "./Azerooth/styles/Overflow";
 import { App } from "azerooth";
 
 const Home: NextPage = () => {
@@ -19,8 +24,16 @@ const Home: NextPage = () => {
         <Route path="/" element={<Layout />}>
           <Route path="azerooth" element={<HomeAzerooth />} />
           <Route path="application" element={<AzeroothAppModule />} />
-          <Route path="typography" element={<AzeroothTypographyModule />} />
+          <Route path="typography" element={<AzeroothTypographyStyles />} />
+          <Route path="colors" element={<AzeroothColorsStyles />} />
+          <Route
+            path="border-radius"
+            element={<AzeroothBorderRadiusStyles />}
+          />
+          <Route path="display" element={<AzeroothDisplayStyles />} />
           <Route path="theme" element={<AzeroothFeatureTheme />} />
+          <Route path="breakpoints" element={<AzeroothFeatureBreakpoints />} />
+          <Route path="overflow" element={<AzeroothOverflowStyles />} />
         </Route>
       </Routes>
     </Fragment>
@@ -36,7 +49,11 @@ function Layout() {
       <nav>
         <Link to="azerooth">Azerooth</Link> |{" "}
         <Link to="application">Application</Link> |{" "}
-        <Link to="typography">Typography</Link> | <Link to="theme">Theme</Link>
+        <Link to="typography">Typography</Link> |{" "}
+        <Link to="border-radius">Border-Radius</Link> |{" "}
+        <Link to="colors">Colors</Link> | <Link to="theme">Theme</Link> |{" "}
+        <Link to="breakpoints">Breakpoints</Link>|{" "}
+        <Link to="overflow">Overflow</Link>| <Link to="display">Display</Link>
       </nav>
       <div className="content">
         <Outlet />
