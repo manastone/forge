@@ -15,6 +15,8 @@ import AzeroothDisplayStyles from "./Azerooth/styles/Display";
 import AzeroothFeatureTheme from "./Azerooth/features/Theme";
 import AzeroothFeatureBreakpoints from "./Azerooth/features/Breakpoints";
 import AzeroothOverflowStyles from "./Azerooth/styles/Overflow";
+import AzeroothSpacingStyles from "./Azerooth/styles/Spacing";
+import AzeroothFloatStyles from "./Azerooth/styles/Float";
 import { App } from "azerooth";
 
 const Home: NextPage = () => {
@@ -34,6 +36,8 @@ const Home: NextPage = () => {
           <Route path="theme" element={<AzeroothFeatureTheme />} />
           <Route path="breakpoints" element={<AzeroothFeatureBreakpoints />} />
           <Route path="overflow" element={<AzeroothOverflowStyles />} />
+          <Route path="spacing" element={<AzeroothSpacingStyles />} />
+          <Route path="float" element={<AzeroothFloatStyles />} />
         </Route>
       </Routes>
     </Fragment>
@@ -53,7 +57,8 @@ function Layout() {
         <Link to="border-radius">Border-Radius</Link> |{" "}
         <Link to="colors">Colors</Link> | <Link to="theme">Theme</Link> |{" "}
         <Link to="breakpoints">Breakpoints</Link>|{" "}
-        <Link to="overflow">Overflow</Link>| <Link to="display">Display</Link>
+        <Link to="overflow">Overflow</Link>| <Link to="display">Display</Link> |{" "}
+        <Link to="spacing">Spacing</Link> | <Link to="float">Float</Link>
       </nav>
       <div className="content">
         <Outlet />
