@@ -24,6 +24,9 @@ import AzeroothFeatureGlobalConfig from "./Azerooth/features/GlobalConfiguration
 import AzeroothFeaturePresets from "./Azerooth/features/Presets";
 import AzeroothGridsModule from "./Azerooth/components/Grids";
 import AzeroothFeatureFonts from "./Azerooth/features/Fonts";
+import AzeroothInstallationStarted from "./Azerooth/gettingStarted/Installation";
+import AzeroothBrowserSupportStarted from "./Azerooth/gettingStarted/BrowserSupport";
+import AzeroothWhyAzeroothIntroduction from "./Azerooth/introduction/whyAzerooth";
 
 const Home: NextPage = () => {
   return (
@@ -31,6 +34,18 @@ const Home: NextPage = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="azerooth" element={<HomeAzerooth />} />
+          <Route
+            path="installation"
+            element={<AzeroothInstallationStarted />}
+          />
+          <Route
+            path="browser-support"
+            element={<AzeroothBrowserSupportStarted />}
+          />
+          <Route
+            path="why-azerooth"
+            element={<AzeroothWhyAzeroothIntroduction />}
+          />
           <Route path="application" element={<AzeroothAppModule />} />
           <Route path="typography" element={<AzeroothTypographyStyles />} />
           <Route path="colors" element={<AzeroothColorsStyles />} />
@@ -68,6 +83,9 @@ function Layout() {
       <button onClick={() => setDarkMode()}>DarK/Night</button>
       <nav>
         <Link to="azerooth">Azerooth</Link> |{" "}
+        <Link to="why-azerooth">Why Azerooth</Link> |{" "}
+        <Link to="installation">Installation</Link> |{" "}
+        <Link to="browser-support">Browser Support</Link> |{" "}
         <Link to="application">Application</Link> |{" "}
         <Link to="typography">Typography</Link> |{" "}
         <Link to="border-radius">Border-Radius</Link> |{" "}
