@@ -21,6 +21,8 @@ import AzeroothFlexStyles from "./Azerooth/styles/Flex";
 import AzeroothContentStyles from "./Azerooth/styles/Content";
 import { App } from "azerooth";
 import AzeroothFeatureGlobalConfig from "./Azerooth/features/GlobalConfiguration";
+import AzeroothFeaturePresets from "./Azerooth/features/Presets";
+import AzeroothGridsModule from "./Azerooth/components/Grids";
 
 const Home: NextPage = () => {
   return (
@@ -43,7 +45,12 @@ const Home: NextPage = () => {
           <Route path="float" element={<AzeroothFloatStyles />} />
           <Route path="flex" element={<AzeroothFlexStyles />} />
           <Route path="content" element={<AzeroothContentStyles />} />
-          <Route path="global-config" element={<AzeroothFeatureGlobalConfig />} />
+          <Route
+            path="global-config"
+            element={<AzeroothFeatureGlobalConfig />}
+          />
+          <Route path="presets" element={<AzeroothFeaturePresets />} />
+          <Route path="grids" element={<AzeroothGridsModule />} />
         </Route>
       </Routes>
     </Fragment>
@@ -64,8 +71,11 @@ function Layout() {
         <Link to="colors">Colors</Link> | <Link to="theme">Theme</Link> |{" "}
         <Link to="breakpoints">Breakpoints</Link>|{" "}
         <Link to="overflow">Overflow</Link>| <Link to="display">Display</Link> |{" "}
-        <Link to="spacing">Spacing</Link> | <Link to="float">Float</Link> | <Link to="flex">Flex</Link>
-        | <Link to="content">Content</Link>| <Link to="global-config">Configuration globale</Link>
+        <Link to="spacing">Spacing</Link> | <Link to="float">Float</Link> |{" "}
+        <Link to="flex">Flex</Link>| <Link to="content">Content</Link>|{" "}
+        <Link to="global-config">Configuration globale</Link> |{" "}
+        <Link to="presets">Presets</Link>
+        <Link to="grids">Grids</Link>
       </nav>
       <div className="content">
         <Outlet />
