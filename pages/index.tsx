@@ -19,10 +19,11 @@ import AzeroothSpacingStyles from "./Azerooth/styles/Spacing";
 import AzeroothFloatStyles from "./Azerooth/styles/Float";
 import AzeroothFlexStyles from "./Azerooth/styles/Flex";
 import AzeroothContentStyles from "./Azerooth/styles/Content";
-import { App } from "azerooth";
+import { App, setDarkMode } from "azerooth";
 import AzeroothFeatureGlobalConfig from "./Azerooth/features/GlobalConfiguration";
 import AzeroothFeaturePresets from "./Azerooth/features/Presets";
 import AzeroothGridsModule from "./Azerooth/components/Grids";
+import AzeroothFeatureFonts from "./Azerooth/features/Fonts";
 
 const Home: NextPage = () => {
   return (
@@ -51,6 +52,7 @@ const Home: NextPage = () => {
           />
           <Route path="presets" element={<AzeroothFeaturePresets />} />
           <Route path="grids" element={<AzeroothGridsModule />} />
+          <Route path="fonts" element={<AzeroothFeatureFonts />} />
         </Route>
       </Routes>
     </Fragment>
@@ -62,7 +64,8 @@ export default Home;
 function Layout() {
   return (
     <App>
-      <h1>ManaStone</h1>
+      <h1 className="text-h3">ManaStone</h1>
+      <button onClick={() => setDarkMode()}>DarK/Night</button>
       <nav>
         <Link to="azerooth">Azerooth</Link> |{" "}
         <Link to="application">Application</Link> |{" "}
@@ -74,8 +77,8 @@ function Layout() {
         <Link to="spacing">Spacing</Link> | <Link to="float">Float</Link> |{" "}
         <Link to="flex">Flex</Link>| <Link to="content">Content</Link>|{" "}
         <Link to="global-config">Configuration globale</Link> |{" "}
-        <Link to="presets">Presets</Link>
-        <Link to="grids">Grids</Link>
+        <Link to="presets">Presets</Link> | <Link to="grids">Grids</Link> |{" "}
+        <Link to="fonts">Fonts</Link>
       </nav>
       <div className="content">
         <Outlet />
