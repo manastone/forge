@@ -19,7 +19,7 @@ import AzeroothSpacingStyles from "./Azerooth/styles/Spacing";
 import AzeroothFloatStyles from "./Azerooth/styles/Float";
 import AzeroothFlexStyles from "./Azerooth/styles/Flex";
 import AzeroothContentStyles from "./Azerooth/styles/Content";
-import { App, setDarkMode } from "azerooth";
+import { App, Container, setDarkMode } from "azerooth";
 import AzeroothFeatureGlobalConfig from "./Azerooth/features/GlobalConfiguration";
 import AzeroothFeaturePresets from "./Azerooth/features/Presets";
 import AzeroothGridsModule from "./Azerooth/components/Grids";
@@ -27,10 +27,22 @@ import AzeroothFeatureFonts from "./Azerooth/features/Fonts";
 import AzeroothInstallationStarted from "./Azerooth/gettingStarted/Installation";
 import AzeroothBrowserSupportStarted from "./Azerooth/gettingStarted/BrowserSupport";
 import AzeroothWhyAzeroothIntroduction from "./Azerooth/introduction/whyAzerooth";
+import AlertAlpha from "./components/Alert";
+import AzeroothIconModule from "./Azerooth/components/Icon";
 
 const Home: NextPage = () => {
   return (
     <Fragment>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+          rel="stylesheet"
+        ></link>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+        />
+      </Head>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="azerooth" element={<HomeAzerooth />} />
@@ -68,6 +80,7 @@ const Home: NextPage = () => {
           <Route path="presets" element={<AzeroothFeaturePresets />} />
           <Route path="grids" element={<AzeroothGridsModule />} />
           <Route path="fonts" element={<AzeroothFeatureFonts />} />
+          <Route path="icon" element={<AzeroothIconModule />} />
         </Route>
       </Routes>
     </Fragment>
@@ -77,8 +90,27 @@ const Home: NextPage = () => {
 export default Home;
 
 function Layout() {
+  // const myTheme = {
+  //   font: {
+  //     default: "Lato, sans-serif",
+  //   },
+  //   // icon: {
+  //   //   iconfont: "fa",
+  //   // },
+  //   // theme: {},
+  // };
+  const myTheme = {
+    theme: {
+      themes: {
+        light: {
+          primary: "#3f51b5",
+        },
+      },
+    },
+  };
   return (
     <App>
+      <Container></Container>
       <h1 className="text-h3">ManaStone</h1>
       <button onClick={() => setDarkMode()}>DarK/Night</button>
       <nav>
@@ -96,8 +128,9 @@ function Layout() {
         <Link to="flex">Flex</Link>| <Link to="content">Content</Link>|{" "}
         <Link to="global-config">Configuration globale</Link> |{" "}
         <Link to="presets">Presets</Link> | <Link to="grids">Grids</Link> |{" "}
-        <Link to="fonts">Fonts</Link>
+        <Link to="fonts">Fonts</Link>| <Link to="icon">Icon</Link>
       </nav>
+      <AlertAlpha>ManaStone est en cours de développement</AlertAlpha>
       <div className="content">
         <Outlet />
       </div>
