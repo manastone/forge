@@ -11,6 +11,8 @@ import { FunctionComponent, useEffect, useState } from "react";
 const AlertAlpha: FunctionComponent<any> = ({ ...props }) => {
   return (
     <div>
+      <Icon color="pink">{mdiAccount}</Icon>
+      <Icon color="primary">{mdiAccount}</Icon>
       <Icon>{mdiAccount}</Icon>
       <Icon xSmall>{mdiAccountAlert}</Icon>
       <Icon small>{mdiAccountDetails}</Icon>

@@ -1,4 +1,3 @@
-import { Icon } from "azerooth";
 import type { NextPage } from "next";
 import { Fragment } from "react";
 
@@ -18,7 +17,7 @@ const HomeAzerooth: NextPage = () => {
       <p>bonjour</p>
       <span className="material-symbols-outlined">search</span>
       <p>aueroir</p>
-      <Icon>{mdiAccount}</Icon>
+      {/* <Icon>{mdiAccount}</Icon> */}
     </Fragment>
   );
 };

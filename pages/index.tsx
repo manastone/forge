@@ -19,7 +19,7 @@ import AzeroothSpacingStyles from "./Azerooth/styles/Spacing";
 import AzeroothFloatStyles from "./Azerooth/styles/Float";
 import AzeroothFlexStyles from "./Azerooth/styles/Flex";
 import AzeroothContentStyles from "./Azerooth/styles/Content";
-import { App, Container, setDarkMode } from "azerooth";
+import { App, Col, Container, Row, setDarkMode } from "azerooth";
 import AzeroothFeatureGlobalConfig from "./Azerooth/features/GlobalConfiguration";
 import AzeroothFeaturePresets from "./Azerooth/features/Presets";
 import AzeroothGridsModule from "./Azerooth/components/Grids";
@@ -29,6 +29,8 @@ import AzeroothBrowserSupportStarted from "./Azerooth/gettingStarted/BrowserSupp
 import AzeroothWhyAzeroothIntroduction from "./Azerooth/introduction/whyAzerooth";
 import AlertAlpha from "./components/Alert";
 import AzeroothIconModule from "./Azerooth/components/Icon";
+import WelcomeMsg from "./components/Welcome";
+import ButtonDemo from "./components/ButtonDemo";
 
 const Home: NextPage = () => {
   return (
@@ -110,8 +112,8 @@ function Layout() {
   };
   return (
     <App>
-      <Container></Container>
-      <h1 className="text-h3">ManaStone</h1>
+      <WelcomeMsg />
+      {/* <h1 className="text-h3">ManaStone</h1> */}
       <button onClick={() => setDarkMode()}>DarK/Night</button>
       <nav>
         <Link to="azerooth">Azerooth</Link> |{" "}
@@ -130,7 +132,34 @@ function Layout() {
         <Link to="presets">Presets</Link> | <Link to="grids">Grids</Link> |{" "}
         <Link to="fonts">Fonts</Link>| <Link to="icon">Icon</Link>
       </nav>
-      <AlertAlpha>ManaStone est en cours de développement</AlertAlpha>
+      <AlertAlpha>ManaStone est en cours de développement</AlertAlpha>{" "}
+      <Container>
+        <Row>
+          <Col cols={3}>
+            <ButtonDemo />
+          </Col>
+          <Col cols={3}>
+            <ButtonDemo />
+          </Col>
+          <Col cols={3}>
+            <ButtonDemo />
+          </Col>
+          <Col cols={3}>
+            <ButtonDemo />
+          </Col>
+        </Row>
+      </Container>
+      {/* <p>
+        lklklfmdskflkdmskflfklm dfmksdl kmlk flmfks mdlkf lmsdk flmkd mlsdkf
+        mlkds lmkf mkf lmsk m <ButtonDemo /> hqjhdksh kqhkj dsh jkdqhj kshqj
+        dqjhdkjqshd jkqhsjkdhkjsq kqjhjk dhdqjk <ButtonDemo />{" "}
+        jlkqskdjsqkldjsqkdlqsjdlkdq qdljqslkdjlqkjdklsj <ButtonDemo />
+        ljsqdkljqkjdkqljklqd kljdksqjdksqjlkdj
+        <ButtonDemo />
+        lkjqdskldjqsldjsqlkjdlkdlskqjd jqdklsjskld kjsqj dksjqkj kjd kq
+        kdsjlkqdskjd ljqsk djqlsjkd klqj kldj ldj sjlk sqjkldjs qkljd kld jqkslj
+        kdjl
+      </p> */}
       <div className="content">
         <Outlet />
       </div>
